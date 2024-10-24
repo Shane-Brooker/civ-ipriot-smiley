@@ -141,35 +141,47 @@ python3 main.py
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> class variable: 
->
+> class variable: self.pixels = [O, Y, Y...]    instance variable: line 22 in happy.py (self.pixels[pixel] = self.BLANK)
+>>A Class variable is the variable assigned in the class or parent of the instance. An Instance variable or attribute is
+> the object referenced from the parent Class.
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Your answer here
+   > self.draw_mouth() and self.draw_eyes(). These contructors stantiate the object for use but don't return a value. For example,
+   > self.draw_mouth() doesn't return a value, but gives form to the method def draw_mouth(self) where then a value can
+   > be returned.
    >
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
+   > the statement executed is self.pixels from the parent Class smiley. The super call allows the child or instance class
+   > call upon the parent or base class as a proxy, similar to using smiley().__init__() (dunder init)
    >
 
 ### Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> Your answer here
+> uses the PEP-8 styleguide. Likely uses the same code style used in the SenseHat as this is the common styleguide for
+> Python 
 >
 
 2. List three aspects of this convention you see applied in the code.
 
-> Your answer here
+> 1. Four-space indentation.
+> 2. Function naming conventions begin with a verb e.g. draw_eyes, dim_display.
+> 3. Class names use the CapitalWords convention, where the first letter in separate words is a capital.
+> 
 >
 
 3. Give two examples of organizational documentation in the code.
 
-> Your answer here
+> 1. Single line comments such as in smiley.py e.g. # We have encapsulated the SenseHat object
+> 2. Block comments such as in smiley.py e.g.         """
+        Set the SenseHat's light intensity to low (True) or high (False)
+        :param dimmed: Dim the display if True, otherwise don't dim
+        """
 >
 
 ### Identifying and understanding classes
