@@ -141,9 +141,9 @@ python3 main.py
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> class variable: self.pixels = [O, Y, Y...]    instance variable: line 22 in happy.py (self.pixels[pixel] = self.BLANK)
->>A Class variable is the variable assigned in the class or parent of the instance. An Instance variable or attribute is
-> the object referenced from the parent Class.
+> class variable: WHITE = (255, 255, 255)    instance variable: line 22 in happy.py (self.pixels[pixel] = self.BLANK)
+>>A Class variable is the variable assigned in a global scope and can be called by any subclass of the superclass.
+> An Instance variable can only be called upon in a local scope and used within that method when called.
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
@@ -216,28 +216,30 @@ python3 main.py
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
+   > The Sad subclass inherits from one super class, being Smiley. Whereas, the Happy sublcass inherits from a super
+   > class and an abstract class.
    >
 2. What are the key similarities?
-   > Your answer here
+   > Both Happy and Sad subclasses inherit from the same superclass - Smiley.
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
+   > The Happy subclass inherits from an abstract class and an abstract method(blink). The Sad subclass should also be
+   > able to inherit from the same abstract method because it also has the same attributes(draw_eyes)
    >
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   > The class Sad doesn't inherit from the Blinkable abstract class, and therefor cannot use the blink abstract method.
    >
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
+   > Smiley utilizes the SenseHat functionality as well as the Happy subclass when calling .show() in the blink method.
    >
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
+   > The Smiley class.
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   > Hiding SenseHat helps with understanding what the program is doing by using abstraction to hide complex code.
    >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
@@ -248,22 +250,27 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
+> No, because there is no Blink method inside the Sad class.
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
+> No, if there was a specific way the author wanted all smileys to blink, it would be a method to be called from the
+> Blinkable class, however the Blink method is only specific to the Happy class.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Your answer here
+> Polymorphism is the act of using an object in different scenarios and getting different results based on the circumstance.
+> Using the Happy class as an example, when the blink method is called, it uses the .show() method from the Smiley superclass
+> which usually hides or shows the entire smiley, but in this case it hides or shows only the values relating to eyes.
 >
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Your answer here
+> Similarly to the previous question, the .show() method from the Smiley superclass is inherited to the Happy subclass.
+> Where this method would usually show or hide the entire smiley, because of polymorphism this can be manipulated to
+> only show or hide the eyes of the smiley.
 >
 1. **Implement Blink in Sad Class:**
 
@@ -282,11 +289,12 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+![Sad Smiley Blinking](screenshots/sad_smiley_blink.png)
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > I had to double check and ensure all related modules were imported correctly. For example, 'import time' to the Sad
+  > superclass to ensure the smiley opens its eyes and uses the delay correctly.
 
   ### If It Walks Like a Duck…
 
