@@ -108,40 +108,40 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name       | value          |
-   | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | Type                    | name  | value                  |
+   | ----------              |-------|------------------------|
+   | built-in primitive type | Bool  | dimmed=True            |
+   | built-in composite type | List  | self.pixels = []       |
+   | user-defined type       | Tuple | Yellow = (255, 255 ,0) |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                    |
-   | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | Object                   | Type   |
+   | ------------             |--------|
+   | self.pixels              | List   |
+   | A member of self.pixels  | Tuple  |
+   | self                     | Object |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File       | First line  | Line range  |
-   | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   | Control Flow | File      | First line          | Line range |
+   | ------------ |-----------|---------------------|------------|
+   |  sequence    | smiley.py | Y = self.YELLOW     | 15 - 26    |
+   |  selection   | sad.py    | if wide_open:       | 26 - 29    |
+   |  iteration   | happy.py  | for pixel in mouth: | 21 - 22    |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used? | Example |
-   | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | Type                    | Used?      | Example                         |
+   | ----------------------- |------------|---------------------------------|
+   | int                     | smiley.py  | 255                             |
+   | float                   | happy.py   | Line 33: delay=0.25             |
+   | str                     | my example | welcome_message = 'I am happy.' |
+   | bool                    | sad.py     | Line 19: wide_open=True         |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
+> class variable: 
 >
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
