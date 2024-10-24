@@ -216,7 +216,7 @@ python3 main.py
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > The Sad subclass inherits from one super class, being Smiley. Whereas, the Happy sublcass inherits from a super
+   > The Sad subclass inherits from one super class, being Smiley. Whereas, the Happy subclass inherits from a super
    > class and an abstract class.
    >
 2. What are the key similarities?
@@ -224,10 +224,12 @@ Compare and contrast the classes Happy and Sad.
    >
 3. What difference stands out the most to you and why?
    > The Happy subclass inherits from an abstract class and an abstract method(blink). The Sad subclass should also be
-   > able to inherit from the same abstract method because it also has the same attributes(draw_eyes)
+   > able to inherit from the same abstract method because it also has the same attributes(draw_eyes), but has not been
+   > chosen to as it also does not have the correct method blink().
    >
 4. How does this difference affect the functionality of these classes
-   > The class Sad doesn't inherit from the Blinkable abstract class, and therefor cannot use the blink abstract method.
+   > The class Sad doesn't inherit from the Blinkable abstract class, doesn't have a blink() method, and therefor cannot
+   > use the blink abstract method.
    >
 
 ### Where is the Sense(Hat) in the code?
@@ -302,23 +304,28 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > If I didn't use the Blinkable class, I would get the same result by calling blink(self) in Main as long as the 
+      blink method is correctly formed in the Sad subclass. Blinkable is also an abstract class due to the ABC
+        (Abstract Base Class) being passed as an argument.
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > An Abstract Class is intended to be used by other classes but cannot be instantiated or rather cannot be a super class.
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Inheritance because the abstract class acts as a 'contract' where all abstract methods and attributes inherited
+  > must be in the subclass, as if laying the foundation for the subclass.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > Because the method of blink() calls upon a method of draw_eyes() which the Sad class has. The blinkable abstract
+  > class is only an interface and does not consist of an abstract method called blink.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > This capability is known as Duck Typing, if a function works then the types being passed around doesn't matter thanks
+  > to the dynamically typed language of Python.
 
   ***
 
