@@ -23,7 +23,7 @@ class Angry(Smiley, Blinkable):
         Draws open or closed eyes on a smiley
         :param wide_open: Render eyes wide open or shut
         """
-        eyes = [10, 13, 18, 21]
+        eyes = [9, 10, 13, 14, 18, 21]
         for pixel in eyes:
             if wide_open:
                 eyes = self.BLANK
